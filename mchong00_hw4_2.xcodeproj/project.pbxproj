@@ -14,6 +14,8 @@
 		4CBD4CC61A8FDC59008D5175 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CBD4CC51A8FDC59008D5175 /* Images.xcassets */; };
 		4CBD4CC91A8FDC5A008D5175 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CBD4CC71A8FDC5A008D5175 /* Main.storyboard */; };
 		4CBD4CD51A8FDC5A008D5175 /* mchong00_hw4_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD4CD41A8FDC5A008D5175 /* mchong00_hw4_2Tests.m */; };
+		4CBD4CE21A8FDC67008D5175 /* TodoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD4CDF1A8FDC67008D5175 /* TodoItem.m */; };
+		4CBD4CE31A8FDC67008D5175 /* TodoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD4CE11A8FDC67008D5175 /* TodoList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,10 @@
 		4CBD4CCE1A8FDC5A008D5175 /* mchong00_hw4_2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mchong00_hw4_2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CBD4CD31A8FDC5A008D5175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CBD4CD41A8FDC5A008D5175 /* mchong00_hw4_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mchong00_hw4_2Tests.m; sourceTree = "<group>"; };
+		4CBD4CDE1A8FDC67008D5175 /* TodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoItem.h; sourceTree = "<group>"; };
+		4CBD4CDF1A8FDC67008D5175 /* TodoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoItem.m; sourceTree = "<group>"; };
+		4CBD4CE01A8FDC67008D5175 /* TodoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoList.h; sourceTree = "<group>"; };
+		4CBD4CE11A8FDC67008D5175 /* TodoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +90,8 @@
 			children = (
 				4CBD4CBA1A8FDC59008D5175 /* AppDelegate.h */,
 				4CBD4CBB1A8FDC59008D5175 /* AppDelegate.m */,
-				4CBD4CBF1A8FDC59008D5175 /* ViewController.h */,
-				4CBD4CC01A8FDC59008D5175 /* ViewController.m */,
-				4CBD4CC21A8FDC59008D5175 /* Document.h */,
-				4CBD4CC31A8FDC59008D5175 /* Document.m */,
+				4CBD4CE51A8FDC85008D5175 /* Main */,
+				4CBD4CE41A8FDC6E008D5175 /* Todo */,
 				4CBD4CC51A8FDC59008D5175 /* Images.xcassets */,
 				4CBD4CC71A8FDC5A008D5175 /* Main.storyboard */,
 				4CBD4CB81A8FDC59008D5175 /* Supporting Files */,
@@ -119,6 +123,28 @@
 				4CBD4CD31A8FDC5A008D5175 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CBD4CE41A8FDC6E008D5175 /* Todo */ = {
+			isa = PBXGroup;
+			children = (
+				4CBD4CDE1A8FDC67008D5175 /* TodoItem.h */,
+				4CBD4CDF1A8FDC67008D5175 /* TodoItem.m */,
+				4CBD4CE01A8FDC67008D5175 /* TodoList.h */,
+				4CBD4CE11A8FDC67008D5175 /* TodoList.m */,
+			);
+			name = Todo;
+			sourceTree = "<group>";
+		};
+		4CBD4CE51A8FDC85008D5175 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4CBD4CBF1A8FDC59008D5175 /* ViewController.h */,
+				4CBD4CC01A8FDC59008D5175 /* ViewController.m */,
+				4CBD4CC21A8FDC59008D5175 /* Document.h */,
+				4CBD4CC31A8FDC59008D5175 /* Document.m */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,9 +247,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CBD4CC41A8FDC59008D5175 /* Document.m in Sources */,
+				4CBD4CE31A8FDC67008D5175 /* TodoList.m in Sources */,
 				4CBD4CC11A8FDC59008D5175 /* ViewController.m in Sources */,
 				4CBD4CBE1A8FDC59008D5175 /* main.m in Sources */,
 				4CBD4CBC1A8FDC59008D5175 /* AppDelegate.m in Sources */,
+				4CBD4CE21A8FDC67008D5175 /* TodoItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
