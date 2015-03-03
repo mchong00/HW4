@@ -20,7 +20,8 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.doclist = [[TodoList alloc] init];
+        //self.doclist = [[TodoList alloc] init];
+        self.doclist = [TodoList todoList];
     }
     return self;
 }
@@ -44,11 +45,12 @@
     [self addWindowController:wc];
     
    ViewController *vc = (ViewController *)wc.contentViewController;
-   //vc.list = self.doclist;
+   vc.list = self.doclist;
 
     
 }
 
+//saving
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {
     NSData* data = [NSKeyedArchiver archivedDataWithRootObject:self.doclist];
@@ -56,6 +58,7 @@
     return data;
 }
 
+//loading
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
 {
     id object = [NSKeyedUnarchiver unarchiveObjectWithData:data];
@@ -63,11 +66,11 @@
     if ([object isKindOfClass:[TodoList class]])
     {
         self.doclist = object;
-        
         return YES;
     }
-    
-    return NO;
+    else {
+        return NO;
+    }
 }
 
 @end

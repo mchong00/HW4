@@ -13,10 +13,12 @@
 
 @property (weak) IBOutlet NSTableView *theTableView;
 @property (weak) IBOutlet NSTextField *inputTextField;
+@property (weak) IBOutlet NSTextField *bodyTextField;
 @property (weak) IBOutlet NSButton *addButton;
 @property (weak) IBOutlet NSButton *removeButton;
 @property (strong) TodoList *list;
 @property NSUInteger row;
+@property NSIndexSet *selectedMultiRow;
 
 @end
 

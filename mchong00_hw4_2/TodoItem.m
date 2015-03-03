@@ -15,11 +15,11 @@
 @implementation TodoItem
 
 
-+(instancetype)todoItemWithTitle:(NSString*)title
++(instancetype)todoItemWithTitle:(NSString*)title withBody:(NSString*)body;
 {
     TodoItem *object = [[self alloc] init];
     object.title = title;
-   
+    object.body = body;
     return object;
 }
 
@@ -27,6 +27,7 @@
 -(void)encodeWithCoder:(NSCoder *)aCoder{
     
     [aCoder encodeObject:self.title forKey:@"titleKey"];
+    [aCoder encodeObject:self.body forKey:@"bodyKey"];
 }
 
 //called when loading
@@ -36,6 +37,7 @@
     
     if(self) {
         self.title = [aDecoder decodeObjectForKey:@"titleKey"];
+        self.body = [aDecoder decodeObjectForKey:@"bodyKey"];
     }
     
     return self;

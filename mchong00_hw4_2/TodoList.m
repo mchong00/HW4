@@ -22,6 +22,24 @@
     return object;
 }
 
++(instancetype)groceryList {
+    TodoList *object = [[self alloc] init];
+    [object.array addObject:@"Beer"];
+    [object.array addObject:@"Wine"];
+    [object.array addObject:@"Vodka"];
+    return object;
+}
+
++(instancetype)airplaneLandingChecking {
+    TodoList *object = [[self alloc] init];
+
+    [object.array addObject:@"Seatbelt"];
+    [object.array addObject:@"TrayTable"];
+    [object.array addObject:@"Seatposition"];
+    return object;
+}
+
+
 -(NSUInteger)itemCount
 {
     return [self.array count];
@@ -33,9 +51,9 @@
 }
 
 
--(void)addItemWithTitle:(NSString*)title
+-(void)addItemWithTitle:(NSString*)title withBody:(NSString*)body
 {
-    [self.array addObject:[TodoItem todoItemWithTitle:title]];
+    [self.array addObject:[TodoItem todoItemWithTitle:title withBody:(NSString*)body]];
 }
 
 -(BOOL)canAddItemWithTitle:(NSString *)item
@@ -48,13 +66,13 @@
     else return true;
 }
 
--(void)changeItem:(NSString *)string atPosition:(NSUInteger)row
+-(void)changeItem:(NSString *)title withBody:(NSString *)body atPosition:(NSUInteger)row
 {
-    
     TodoItem *newItem = [TodoItem new];
-    newItem.title = string;
+    newItem.title = title;
+    newItem.body = body;
     [self.array replaceObjectAtIndex:row withObject:newItem];
-    [self itemTitles];
+    //[self itemTitles];
 }
 
 
@@ -64,12 +82,18 @@
     return titleAtPosition;
 }
 
+-(NSString *)getObjectBodyAtPosition:(NSUInteger)row
+{
+    NSString *bodyAtPosition = [[self.array objectAtIndex:row] valueForKey:@"body"];
+    return bodyAtPosition;
+}
 
 //called when saving
 -(void)encodeWithCoder:(NSCoder *)aCoder{
     
     [aCoder encodeObject:self.array forKey:@"itemsArray"];
-   
+    [aCoder encodeObject:self.title forKey:@"titleKey"];
+  //  [aCoder encodeObject:self.body forKey:@"bodyKey"];
 }
 
 //called when loading
@@ -80,7 +104,8 @@
     
     if(self){
         self.array = [aDecoder decodeObjectForKey:@"itemsArray"];
-    
+        self.title = [aDecoder decodeObjectForKey:@"titleKey"];
+      //  self.body = [aDecoder decodeObjectForKey:@"bodyKey"];
     }
     
     return self;

@@ -12,15 +12,18 @@
 
 @interface TodoList : NSObject <NSCoding>
 
-@property (strong, nonatomic) NSMutableArray *array;
+@property (nonatomic, readwrite) NSMutableArray *array;
+@property (nonatomic, readwrite) NSString *title;
+@property (nonatomic, readwrite) NSString *body;
 
 +(instancetype)todoList;
 -(NSArray*)itemTitles;
 -(NSUInteger)itemCount;
 -(NSString *)getObjectTitleAtPosition:(NSUInteger)row;
+-(NSString *)getObjectBodyAtPosition:(NSUInteger)row;
 -(BOOL)canAddItemWithTitle:(NSString *)item;
--(void)addItemWithTitle:(NSString*)title;
--(void)changeItem:(NSString *)string atPosition:(NSUInteger)row;
+-(void)addItemWithTitle:(NSString*)title withBody:(NSString*)body;
+-(void)changeItem:(NSString *)title withBody:(NSString *)body atPosition:(NSUInteger)row;
 -(void)encodeWithCoder:(NSCoder *)aCoder;
 -(id)initWithCoder:(NSCoder *)aDecoder;
 

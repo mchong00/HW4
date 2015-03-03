@@ -12,7 +12,7 @@
 @interface TodoItem : NSObject <NSCoding>
 
 @property (copy) NSString *title;
-
-+(instancetype)todoItemWithTitle:(NSString*)title;
+@property (copy) NSString *body;
++(instancetype)todoItemWithTitle:(NSString*)title withBody:(NSString*)body;
 
 @end
