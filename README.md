@@ -1,6 +1,5 @@
 # HW4
 
-Just completely stuck. In document.m, if I comment out line 47, things work fine. I can add items, delete items, etc. 
-But once I uncomment line 47, no longer able to add any items. I don't understand it. Please help!
+Finally finished everything now. I added convenience constructors, multi-selection support, body text field, and document save/loading working correctly. 
 
-Thanks. 
+Don't really care about the grade, just happy to have it work correctly is super cool for me!
